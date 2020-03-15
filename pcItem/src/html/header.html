@@ -1,0 +1,109 @@
+<nav class="navbar navbar-default indexnav">
+  <div class="container-fluid">
+    <a href="/index.html">
+      <div class="navbar-header abc">
+        <img class="wzllogo"
+          src="https://www.boneshop.cn/skin/frontend/boneshop_v3/default/images/logo-zh_CN.svg"></img>
+      </div>
+    </a>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav wzlnav">
+        <li><a id="headerZTJX" href="/index.html">首页</a></li>
+        <li><a id="headerZTJX" href="/html/shoplist.html">商品列表</a></li>
+        <li><a id="headerZTJX" href="#">主题精选</a></li>
+        <li><a id="headerZTJX" href="#">商品分类</a></li>
+        <li><a id="headerZTJX" href="#">自由搭配</a></li>
+        <li><a id="headerZTJX" href="#">精选优惠</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="loginreg" data-toggle="modal" data-target="#myModalA"><a id="headerZTJX" href="#">登录</a></li>
+        <li class="loginreg" data-toggle="modal" data-target="#yourModalA"><a id="headerZTJX" href="#">注册</a></li
+          data-toggle="modal" data-target="#yourModalA">
+        <li class="welcome"><i id="headerWel" href="#">欢迎您，<span class="logSuc"></span><a id="zhuxiao"
+              href="#">（注销）</a></i></li>
+        <li><a id="headerZTJX" href="/html/shopcar.html"><span class="glyphicon glyphicon-shopping-cart"></span>
+            购物车( <span class="headerCartCun">0</span> )</a>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-right box-search">
+        <div class="form-group">
+          <input id="search-inp" type="text" class="form-control" placeholder="请输入..." />
+        </div>
+        <button type="submit" class="btn btn-default">搜索</button>
+      </form>
+      <ul class="search-UL">
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="modal fade" id="myModalA" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="loginModalLabel">登录</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label for="inputEmail7" class="col-sm-2 control-label">用户名</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control loginuser" id="inputEmail7 " placeholder="请输入">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword8" class="col-sm-2 control-label">密码</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control loginpassword" id="inputPassword8 " placeholder="请输入">
+            </div>
+          </div>
+          <p id="add-info" class="text-center loginsuccsess"></p>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary btn1-shop " id='btnlogin'>登录</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="yourModalA" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">注册</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label for="inputEmail6" class="col-sm-2 control-label">用户名</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control registuser" id="inputEmail6" placeholder="请输入">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control registpassword" id="inputPassword3" placeholder="请输入">
+            </div>
+          </div>
+          <p id="add-info" class="text-center registsuccsess"></p>
+        </form>
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary btn1-shop btnregist" id="btnregist">注册</button>
+      </div>
+    </div>
+  </div>
+</div>

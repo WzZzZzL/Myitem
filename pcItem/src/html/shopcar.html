@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车</title>
+    <link rel="stylesheet" href="/libs/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/libs/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/modules/header.css" />
+    <link rel="stylesheet" href="/css/modules/footer.css">
+    <link rel="stylesheet" href="/css/modules/shopcar.css">
+</head>
+
+<body>
+    <header class="navbar-fixed-top"></header>
+    <div id="scUl" class="scMain">
+
+    </div>
+
+    <script type="text/html" id="scTemplate">
+    <div class="scMaintil">购物车</div>
+    <input type="checkbox" name="" id="all-check">全选
+        <ul style="list-style: none; padding: 0px;">
+            {{each cartList shop}}
+            <li data-id="{{shop.id}}" class="scMainli">
+                <input type="checkbox" class="checks" {{shop.check ? 'checked' : ''}}>
+                <a class="scMainlib"  href="/html/details.html?id={{shop.id}}">
+                    <img class="scMainliImg" src="{{shop.imgs[0]}}" alt="">
+                </a>
+                <a class="scMainliA" href="/html/details.html?id={{shop.id}}">{{shop.title.length > 5 ? shop.title.slice(0,5)+'...' : shop.title}}</a>
+                <div class="scMainliGru1">
+                    <div class="input-group-sm scMainliIpuGru">
+                        <button type="button" class="btn btn-default subcount">-</button>
+                        <input style="width: 40px;height: 34px; text-align: center;" type="text" class="form-control addcount-inp"
+                            aria-label="Amount (to the nearest dollar)" value="{{shop.count}}">
+                        <button type="button" class="btn btn-default addcount">+</button>
+                    </div>
+                    <span class="scMainliPri">价格: <span>￥</span> <span>{{shop.price}}</span></span>
+                </div>
+                <div class="scMainliGru2">
+                    <div class="input-group-sm scMainliIpuGru2">
+                        
+                        <button type="button" class="btn btn-default"><span
+                                class="glyphicon glyphicon-trash del-btn"></span></button>
+                    </div>
+                    <span class="scMainliPri2">小计: <span>￥</span> <span id='sumcount'>{{(shop.price * shop.count).toFixed(0)}}</span></span>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+        <div class="scMainSum">
+            <div class="scMainSumBox">
+                <span style="border-bottom: 1px solid #ccc;">小计<span
+                        style="margin-left: 320px;line-height: 60px;">￥</span>
+                    <span id='SUMmoney'>0</span></span>
+                <span style="font-weight: bold;">总计<span style="margin-left: 320px;line-height: 60px;">￥</span>
+                    <span id="Paymoney">0</span></span>
+                <button style="height: 40px;color: #fff;background: #0077d7;" type="button"
+                    class="btn btn-default">进行结账</button>
+            </div>
+        </div>
+    </script>
+    <div id="cart-empty">
+        没有商品
+    </div>
+    <footer></footer>
+</body>
+<script src="/libs/require/require.min.js" data-main="/js/shopcar"></script>
+
+</html>

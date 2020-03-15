@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>列表页</title>
+    <link rel="stylesheet" href="/libs/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/libs/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/modules/header.css" />
+    <link rel="stylesheet" href="/css/modules/shoplist.css">
+</head>
+
+<body>
+    <header class="navbar-fixed-top"></header>
+    <div class="shoplistMain">
+        <div class="shoplistBan">
+            <img class="slImgBan" src="https://www.boneshop.cn/media/catalog/category/Case_1.jpg" alt="">
+            <div class="SLfl">
+                <div class="SLflLeft">
+                    <span class="SLflL"><span class="glyphicon glyphicon-filter"></span> <span>过滤器</span> </span>
+                    <span class="SLflR"><span class="glyphicon glyphicon-th-list SLflicon"> </span>
+                        <span>分类</span></span>
+                </div>
+                <a id="listPaixu" href="javascript:">
+                    <span class="SLflYJ"><span class="glyphicon glyphicon-sort"></span> <span>价格排序</span></span>
+                </a>
+
+            </div>
+        </div>
+        <div class="SLMain">
+            <ul class="SLMul" id="categoryList">
+
+            </ul>
+            <script type="text/html" id="typeTemplate">
+                {{each list type}}
+                <a class='SLMainA' href="/html/details.html?id={{type.id}}">
+                    <li class="SLMli col-md-3">
+                        <img class="SLMliIMG"
+                            src="{{type.src}}"
+                            alt="">
+                        <span class="SLMliXH">{{type.title
+                        }}</span>
+                        <span class="SLMliName">{{type.Ltitle}}</span>
+                        <span class="SLMliPri">最低 ￥<span class="SLMliPriLA">{{type.price}}</span></span>
+                        <button type="button" class="btn btn-default SLMliBUT"><span
+                                class="glyphicon glyphicon-shopping-cart"></span></button>
+                    </li>
+                </a>
+                
+                {{/each}}
+              </script>
+        </div>
+    </div>
+    <footer></footer>
+</body>
+<script src="/libs/require/require.min.js" data-main="/js/shoplist"></script>
+
+</html>

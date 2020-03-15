@@ -1,0 +1,74 @@
+.scMain{
+    width: 100%;
+    padding: 0px 168px;
+}
+.scMaintil{
+    height: 184px;
+    padding-top: 110px;
+    border-bottom: 4px solid rgb(204, 204, 204);
+    font-size: 30px;
+}
+.scMainli{
+    height: 160px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    padding: 20px 0px;
+}
+.scMainliImg{
+    width: 107px;
+    height: 107px;   
+}
+.scMainliA{
+    text-decoration:none;
+    color: #000;
+    font-weight: bolder;
+    padding-bottom: 90px;
+    margin-left: 60px;
+}
+.scMainliIpuGru{
+    display: flex;
+    padding-bottom: 70px;
+    margin-left: 543px;
+}
+.scMainliPri{
+    margin-left: 543px;
+}
+.scMainliGru1{
+    display: flex;
+    flex-direction: column;
+}
+.scMainliIpuGru2{
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 70px;
+    margin-left: 230px;
+}
+.scMainliPri2{
+    margin-left: 220px;
+}
+.scMainSum{
+    height: 350px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: -20px;
+}
+.scMainSumBox{
+    height: 100%;
+    width: 410px;
+    display: flex;
+    flex-direction: column;
+}
+.scMainlib{
+    display: block;
+    width: 50px;
+    margin-left: 20px;
+    }
+
+#cart-empty{
+    width: 100%;
+    height: 500px;
+    text-align: center;
+    line-height: 500px;
+}
