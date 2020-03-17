@@ -29,6 +29,7 @@ li{
     float: left;
     width: calc(100% - 70px);
     height: 41px;
+    box-sizing: border-box;
     .nm{
         font-size: 15px;
         color: #191a1b;

@@ -28,6 +28,7 @@
                 </li>
             </ul>
             <div class="nomore">- 无更多电影 -</div>
+            <div class="space"></div>
         </div>
     </v-touch>
 </template>
@@ -79,6 +80,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.space{
+    height: 49px;
+    background-color: #f4f4f4;
+}
     div{
         box-sizing: border-box;
         touch-action: pan-y!important;

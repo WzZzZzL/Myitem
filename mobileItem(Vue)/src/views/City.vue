@@ -1,5 +1,4 @@
 <template>
-  <v-touch @swiperight="handleSwipeRight" style="height:100%">
   <div>
     <div class="title">
       <div class="left" @click="back"><i class="iconfont icon-close"></i></div>
@@ -23,8 +22,7 @@
         </div>
       </div>   
     </div>
-    <div class="content" v-show="!searchValue" :style="{height:scrollHeight}">
-      <div>
+    <div class="content" v-show="!searchValue">
         <div class="popular">
           <div>热门城市</div>
             <div class="city">
@@ -44,15 +42,12 @@
           </van-index-bar>
       </div>
     </div>
-  </div>
-  </v-touch>
 </template>
 <script>
 import Vue from 'vue';
 import { IndexBar, IndexAnchor } from 'vant';
 import http from '@/util/http'
 import {mapMutations,mapState} from 'vuex'
-import BetterScroll from 'better-scroll'
 Vue.use(IndexBar);
 Vue.use(IndexAnchor);
 
@@ -63,7 +58,6 @@ export default {
       datalist:[],
       searchValue:"",
       citylist:[],
-      scrollHeight:"0px"
     }
   },
   mounted(){
@@ -79,16 +73,6 @@ export default {
       // console.log(this.citylist)
     }),
     this.hide()
-      //betterscroll
-      this.scrollHeight = document.documentElement.clientHeight-80-50+"px"
-      //初始化betterscroll
-      new BetterScroll(".content",{
-        scrollbar: {
-          fade: true,
-          interactive: false // 1.8.0 新增
-        },
-        click:true //支持click事件
-      })
   },
   methods:{
     ...mapMutations("tabbar",["hide","show"]), //把tabbar命名空间的hide,show 截出
@@ -206,6 +190,8 @@ export default {
 .content{
   position: relative;
   top:98px;
+  overflow-x: auto;
+  height: calc(100% - 98px);
   .index{
     background-color: #f4f4f4;
   }
@@ -219,7 +205,6 @@ export default {
     ul{
       width: 100%;
       height:100px;
-
       li{
         width:30%;
         height:30px;

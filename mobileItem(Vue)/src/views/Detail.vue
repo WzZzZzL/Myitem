@@ -506,7 +506,6 @@ export default {
             box-sizing: border-box;
             width: 150px;
             height: 100px;
-            background: rgb(249, 249, 249);
             overflow: hidden;
             img {
               width: 100%;

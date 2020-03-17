@@ -1,5 +1,4 @@
 <template>
-  <v-touch @swiperight="handleSwipeRight" @swipeleft="handleSwipeLeft" style="height: 100%;">
   <div>
     <div class="title">
         <div class="left" @click="handleChangePage('/city')">{{cityName}} <i class="iconfont icon-arrow-down"></i></div>
@@ -33,16 +32,17 @@
         <li @click="handleHavebeen('2')" :class="ishavebeen===true?'':'active'"><i :class="ishavebeen===true?'':'iconfont icon-seleted'"></i><span>离我最近</span></li>
       </ul>
     </div>
-
+<v-touch @swiperight="handleSwipeRight" @swipeleft="handleSwipeLeft">
     <div class="content" :style="{height:scrollHeight}">
         <ul>
           <cinema-item   v-for="data in computedDatalist" :key="data.cinemaId"
           :data="data" :ticketFlag="ticketFlag" @GoFilm="GotoFilm"  ></cinema-item>
         </ul>
     </div>
+</v-touch>
     <div :class="(isAreaShow||isBookingShow||ishavebeenShow)===true?'overlay':''" ></div>
   </div>
-  </v-touch>
+  
 </template>
 <script>
 import http from '@/util/http'
@@ -173,6 +173,9 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+ul{
+  box-sizing: border-box;
+}
 .title{
   display: flex;
   position:fixed;
@@ -281,6 +284,7 @@ export default {
   ul{
     display: flex;
     flex-wrap: wrap;
+    box-sizing: border-box;
     li{
       width: 100%;
       color: #797d82;
